@@ -50,7 +50,6 @@ public class CustomerController {
 	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
 		
 		// save the customer using our service
-		
 		customerService.saveCustomer(theCustomer);
 		
 		return "redirect:/customer/list";
@@ -60,7 +59,7 @@ public class CustomerController {
 	public String showFormUpdate(@RequestParam("customerId") int theId,
 								Model theModel) {
 		
-		// get the customer from the database
+		// get the customer from our service
 		Customer theCustomer = customerService.getCustomer(theId);
 		
 		// set customer as a model attribute to pre-populate the form
